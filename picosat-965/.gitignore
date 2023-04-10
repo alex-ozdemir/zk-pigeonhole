@@ -1,0 +1,8 @@
+*.o
+*.a
+config.h
+makefile
+picogcnf
+picomcs
+picomus
+picosat
