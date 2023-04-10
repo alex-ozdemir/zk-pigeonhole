@@ -11,6 +11,8 @@
   * Prints the CNF to stdout
 * Generate a refutation with picosat and check it with ZKUNSAT: `./zkunsat/run.zsh CNF_PATH`
 * Generate a refutation with picosat and check it with lean: `./lean/run.zsh CNF_PATH`
+* Generate a refutation with picosat and write a lean file with the theorem: `./lean/gen_lean.zsh CNF_PATH LEAN_PATH`
+  * `LEAN_PATH`: output file
 
 ## Set-Up and Dependencies
 
