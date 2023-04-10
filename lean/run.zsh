@@ -7,7 +7,7 @@ zkunsat_bin="$mydir/build/test"
 zkunsat_sort="$mydir/Sort.py"
 zkunsat_unfold="$mydir/unfold_proof.py"
 to_lean="$mydir/unfold_to_lean.py"
-picosat="$HOME/repos/picosat/picosat-965/picosat"
+picosat="$mydir/../picosat-965/picosat"
 
 cnf=$1
 
@@ -20,9 +20,8 @@ lean=$fname.lean
 rm -f $pf $sorted $unfold $lean
 
 $picosat $cnf -T $pf || echo 'ok'
-wc -l $pf
-python $zkunsat_sort $pf > $sorted
-python $zkunsat_unfold $sorted
+python3 $zkunsat_sort $pf > $sorted
+python3 $zkunsat_unfold $sorted
 
 $to_lean $unfold > $lean
 cat $lean

@@ -11,7 +11,7 @@ fi
 zkunsat_bin="$ZKUNSAT_DIR/build/test"
 zkunsat_sort="$ZKUNSAT_DIR/prover_backend/Sort.py"
 zkunsat_unfold="$ZKUNSAT_DIR/prover_backend/unfold_proof.py"
-picosat="$HOME/repos/picosat/picosat-965/picosat"
+picosat="$mydir/../picosat-965/picosat"
 
 cnf=$1
 if [[ -z $cnf ]]
@@ -29,9 +29,8 @@ rm -f $pf $sorted $unfold
 rm -rf data
 
 $picosat $cnf -T $pf || echo 'ok'
-wc -l $pf
-python $zkunsat_sort $pf > $sorted
-python $zkunsat_unfold $sorted
+python3 $zkunsat_sort $pf > $sorted
+python3 $zkunsat_unfold $sorted
 
 mkdir data
 $zkunsat_bin 1 12345 127.0.0.1 $unfold &

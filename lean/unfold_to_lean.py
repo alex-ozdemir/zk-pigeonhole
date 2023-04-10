@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Based on part of the ZKUNSAT source distribution, written by Ning Luo and Xiao Wang
 # https://github.com/PP-FM/ZKUNSAT
